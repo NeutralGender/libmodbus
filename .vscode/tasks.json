@@ -1,0 +1,77 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "modbus slave",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "-I/${workspaceFolder}/include/",
+                "${workspaceFolder}/src/slave/main.cpp",
+
+                "-lmodbus",
+                "-pthread",
+
+                "-o",
+                "${workspaceFolder}/bin/main_slave"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+
+        {
+            "label": "modbus master",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "-I/${workspaceFolder}/include/",
+                "${workspaceFolder}/src/master/main.cpp",
+
+                "-lmodbus",
+                "-pthread",
+
+                "-o",
+                "${workspaceFolder}/bin/main_master"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+
+        {
+            "label": "modbus Crypto",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "-I/${workspaceFolder}/include/",
+                "${workspaceFolder}/src/crypto/main.cpp",
+
+                "-lssl",
+                "-lcrypto",
+                //"-lmodbus",
+                "-pthread",
+
+                "-o",
+                "${workspaceFolder}/bin/main_crypto"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

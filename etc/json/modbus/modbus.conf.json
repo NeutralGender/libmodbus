@@ -1,0 +1,18 @@
+[
+    {
+        "mapping":
+        {
+            "nb_bits": 0,
+            "nb_input_bits": 0,
+            "nb_registers": 500,
+            "nb_input_registers": 500
+        },
+
+        "tcp":
+        {
+            "host": "127.0.0.1",
+            "port": 1502,
+            "backlog": 8
+        }
+    }
+]
