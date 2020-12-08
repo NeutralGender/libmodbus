@@ -27,7 +27,7 @@ using uniq_thread = std::unique_ptr< raii_thread >;
 public:
     master_t()
     {}
-
+    
     ~master_t()
     {
         for(auto& e : conn )
